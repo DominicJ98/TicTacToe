@@ -1,3 +1,4 @@
+import Position.Coordinate;
 import jdk.swing.interop.SwingInterOpUtils;
 
 import java.sql.SQLOutput;
@@ -8,9 +9,9 @@ public class TicTacToe {
     public int count = 0; // keeps track of how many turns are left before the board is full
     Users players;
     public Object[][] ticTable = {
-                        {"|","|","|"},
-                        {"|","|","|"},
-                        {"|","|","|"}
+                        {"1","2","3"},
+                        {"4","5","6"},
+                        {"7","8","9"}
                             };
     TicTacToe(Users players){
         this.players = players;
@@ -160,13 +161,14 @@ public class TicTacToe {
 
 
     //method takes in Row, Column, and input ("x" or "o") in that order
-    public void tableUpdate(int c, int r, String i){
+    public void tableUpdate(Coordinate coordinate, String i){
         if(i != "x" || i != "o"){
             System.out.println("Incorrect Input. Please Try Again!");
-        } else if (ticTable[r][c] == "x" || ticTable[r][c] == "o") {
+        } else if (ticTable[coordinate.getRow()][coordinate.getColumn()] == "x" ||
+                ticTable[coordinate.getRow()][coordinate.getColumn()] == "o") {
             System.out.println("That spot is already taken. Please Try Again!");
         }else{
-            ticTable[r][c] = i;
+            ticTable[coordinate.getRow()][coordinate.getColumn()] = i;
             count++;
         }
     }
