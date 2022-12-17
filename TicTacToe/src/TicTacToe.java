@@ -158,6 +158,7 @@ public class TicTacToe {
         return false;
     }
 
+
     //method takes in Row, Column, and input ("x" or "o") in that order
     public void tableUpdate(int c, int r, String i){
         if(i != "x" || i != "o"){

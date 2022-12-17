@@ -9,7 +9,9 @@ public class Users {
      this.playerTwo = playerTwo;
     }
 
+    public Users() {
 
+    }
 
 
     public String getPlayerOne() {
