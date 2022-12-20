@@ -9,9 +9,9 @@ public class TicTacToe {
     public int count = 0; // keeps track of how many turns are left before the board is full
     Users players;
     public Object[][] ticTable = {
-                        {"1","2","3"},
-                        {"4","5","6"},
-                        {"7","8","9"}
+                        {"__1_","_2_","_3__"},
+                        {"__4_","_5_","_6__"},
+                        {"__7_","_8_","_9__"}
                             };
     TicTacToe(Users players){
         this.players = players;
@@ -162,9 +162,7 @@ public class TicTacToe {
 
     //method takes in Row, Column, and input ("x" or "o") in that order
     public void tableUpdate(Coordinate coordinate, String i){
-        if(i != "x" || i != "o"){
-            System.out.println("Incorrect Input. Please Try Again!");
-        } else if (ticTable[coordinate.getRow()][coordinate.getColumn()] == "x" ||
+        if(ticTable[coordinate.getRow()][coordinate.getColumn()] == "x" ||
                 ticTable[coordinate.getRow()][coordinate.getColumn()] == "o") {
             System.out.println("That spot is already taken. Please Try Again!");
         }else{
