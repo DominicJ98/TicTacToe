@@ -220,8 +220,8 @@ public class TicTacToe {
                 || ticTable[coordinate.getRow()][coordinate.getColumn()] == "__o_"
                 || ticTable[coordinate.getRow()][coordinate.getColumn()] == "_x_"
                 || ticTable[coordinate.getRow()][coordinate.getColumn()] == "_x__"
-                || ticTable[coordinate.getRow()][coordinate.getColumn()] == "_0__"
-                || ticTable[coordinate.getRow()][coordinate.getColumn()] == "_0_"
+                || ticTable[coordinate.getRow()][coordinate.getColumn()] == "_o__"
+                || ticTable[coordinate.getRow()][coordinate.getColumn()] == "_o_"
         ) {
             System.out.println("That spot is already taken. Please Try Again!");
         }else if(coordinate.equals(positions.getOne())
@@ -251,9 +251,4 @@ public class TicTacToe {
             System.out.println();
         }
     }
-    //input to an empty tictactoe board
-
-
-    //after 4 inputs start checking board for wins until you reach 9 inputs it is a tie
-    
 }
