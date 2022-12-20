@@ -92,6 +92,44 @@ public class Main {
                 case "8" -> game.tableUpdate(positions.getEight(), "o");
                 case "9" -> game.tableUpdate(positions.getNine(), "o");
             }
+
+            game.printTable();
+        }
+
+
+        while(!game.checkVictory()){
+            System.out.println("Player one, please enter a position 1 - 9, for your marker X");
+            String position = scanner.nextLine();
+
+            switch (position) {
+                case "1" -> game.tableUpdate(positions.getOne(), "x");
+                case "2" -> game.tableUpdate(positions.getTwo(), "x");
+                case "3" -> game.tableUpdate(positions.getThree(), "x");
+                case "4" -> game.tableUpdate(positions.getFour(), "x");
+                case "5" -> game.tableUpdate(positions.getFive(), "x");
+                case "6" -> game.tableUpdate(positions.getSix(), "x");
+                case "7" -> game.tableUpdate(positions.getSeven(), "x");
+                case "8" -> game.tableUpdate(positions.getEight(), "x");
+                case "9" -> game.tableUpdate(positions.getNine(), "x");
+            }
+
+            game.checkVictory();
+            game.printTable();
+            System.out.println("Player two, please enter a position 1 - 9, for your marker O");
+            String position2 = scanner.nextLine();
+            switch(position2){
+                case "1" -> game.tableUpdate(positions.getOne(), "o");
+                case "2" -> game.tableUpdate(positions.getTwo(), "o");
+                case "3" -> game.tableUpdate(positions.getThree(), "o");
+                case "4" -> game.tableUpdate(positions.getFour(), "o");
+                case "5" -> game.tableUpdate(positions.getFive(), "o");
+                case "6" -> game.tableUpdate(positions.getSix(), "o");
+                case "7" -> game.tableUpdate(positions.getSeven(), "o");
+                case "8" -> game.tableUpdate(positions.getEight(), "o");
+                case "9" -> game.tableUpdate(positions.getNine(), "o");
+            }
+            game.checkVictory();
+            game.printTable();
         }
 
     }
