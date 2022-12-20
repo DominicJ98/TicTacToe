@@ -20,7 +20,8 @@ public class TicTacToe {
 
     // checks for victory should only be used if counter is at least 4
     public boolean checkVictory(){
-        int vicSum = 0; // running total that determines win
+        int xCount = 0; // running count for X
+        int oCount = 0; // running count for O
         int columnIndex = 0; // keeps track of column
 
         // checks the first row for victory
@@ -29,175 +30,182 @@ public class TicTacToe {
                 ||ticTable[0][i].equals("_x_")
                 ||ticTable[0][i].equals("_x__")
             ){
-                vicSum++;
+                xCount++;
             } else if (ticTable[0][i].equals("__o_")
                 ||ticTable[0][i].equals("_o_")
                 ||ticTable[0][i].equals("_o__")
             ) {
-                vicSum += 2;
+                oCount++;
             }
 
-            if (vicSum == 3){
+            if (xCount == 3){
                 System.out.println("X Wins!");
                 return true;
-            }else if(vicSum == 6){
+            }else if(oCount == 3){
                 System.out.println("O Wins!");
                 return true;
             }
         }
 
-        vicSum = 0; // zeros the countrunning count
+        xCount = 0; // zeros running count for X
+        oCount = 0; // zeros running count for O
         // check second row for victory
         for (int i = 0; i < ticTable[1].length; i++) {
             if (ticTable[1][i].equals("__x_")
                 ||ticTable[1][i].equals("_x_")
                 ||ticTable[1][i].equals("_x__")
             ){
-                vicSum++;
+                xCount++;
             } else if (ticTable[1][i].equals("__o_")
                 ||ticTable[1][i].equals("_o_")
                 ||ticTable[1][i].equals("_o__")
             ) {
-                vicSum += 2;
+                oCount ++;
             }
-            if (vicSum == 3){
+            if (xCount == 3){
                 System.out.println("X Wins!");
                 return true;
-            }else if(vicSum == 6){
+            }else if(oCount == 3){
                 System.out.println("O Wins!");
                 return true;
             }
         }
 
-        vicSum = 0; // zeros the running count
+        xCount = 0; // zeros running count for X
+        oCount = 0; // zeros running count for O
         //checks 3rd row for victory
         for (int i = 0; i < ticTable[2].length; i++) {
             if (ticTable[2][i].equals("__x_")
                 ||ticTable[2][i].equals("_x_")
                 ||ticTable[2][i].equals("_x__")
             ){
-                vicSum++;
+                xCount++;
             } else if (ticTable[2][i].equals("__o_")
                 || ticTable[2][i].equals("_o_")
                 || ticTable[2][i].equals("_o__")
             ) {
-                vicSum += 2;
+                oCount++;
             }
-            if (vicSum == 3){
+            if (xCount == 3){
                 System.out.println("X Wins!");
                 return true;
-            }else if(vicSum == 6){
+            }else if(oCount == 3){
                 System.out.println("O Wins!");
                 return true;
             }
         }
 
-        vicSum = 0; // zeros running count
+        xCount = 0; // zeros running count for X
+        oCount = 0; // zeros running count for O
         // checks 1st column for victory columnIndex is 0
         for (int i = 0; i < ticTable.length; i++) {
             if (ticTable[i][0].equals("__x_")
                 || ticTable[i][0].equals("_x_")
                 || ticTable[i][0].equals("_x__")
             ){
-                vicSum++;
+                xCount++;
             } else if (ticTable[i][0].equals("__o_")
                 || ticTable[i][0].equals("_o_")
                 || ticTable[i][0].equals("_o__")
             ) {
-                vicSum += 2;
+                oCount++;
             }
-            if (vicSum == 3){
+            if (xCount == 3){
                 System.out.println("X Wins!");
                 return true;
-            }else if(vicSum == 6){
+            }else if(oCount == 3){
                 System.out.println("O Wins!");
                 return true;
             }
         }
 
-        vicSum = 0; // zeros running count
+        xCount = 0; // zeros running count for X
+        oCount = 0; // zeros running count for O
         // checks 2nd column for victory coulumn Index is 1
         for (int i = 0; i < ticTable.length; i++) {
             if (ticTable[i][1].equals("__x_")
                 || ticTable[i][1].equals("_x_")
                 || ticTable[i][1].equals("_x__")
             ){
-                vicSum++;
+                xCount++;
             } else if (ticTable[i][1].equals("__o_")
                 ||ticTable[i][1].equals("_o_")
                 ||ticTable[i][1].equals("_o__")
             ) {
-                vicSum += 2;
+                oCount++;
             }
-            if (vicSum == 3){
+            if (xCount == 3){
                 System.out.println("X Wins!");
                 return true;
-            }else if(vicSum == 6){
+            }else if(oCount == 3){
                 System.out.println("O Wins!");
                 return true;
             }
         }
 
-        vicSum = 0; // zeros running count
+        xCount = 0; // zeros running count for X
+        oCount = 0; // zeros running count for O
         // checks 3nd column for victory coulumn Index is 2
         for (int i = 0; i < ticTable.length; i++) {
             if (ticTable[i][2].equals("__x_")
                 ||ticTable[i][2].equals("_x_")
                 ||ticTable[i][2].equals("_x__")
             ){
-                vicSum++;
+                xCount++;
             } else if (ticTable[i][2].equals("__o_")
                 ||ticTable[i][2].equals("_o_")
                 ||ticTable[i][2].equals("_o__")
             ) {
-                vicSum += 2;
+                oCount++;
             }
-            if (vicSum == 3){
+            if (xCount == 3){
                 System.out.println("X Wins!");
                 return true;
-            }else if(vicSum == 6){
+            }else if(oCount == 3){
                 System.out.println("O Wins!");
                 return true;
             }
         }
 
-        vicSum = 0; // zeros running count
+        xCount = 0; // zeros running count for X
+        oCount = 0; // zeros running count for O
         // checks the diagonal for victory
         for (int i = 0; i < ticTable.length; i++) {
             if (ticTable[i][i].equals("__x_")
                 ||ticTable[i][i].equals("_x_")
                 ||ticTable[i][i].equals("_x__")
             ){
-                vicSum++;
+                xCount++;
             } else if (ticTable[i][i].equals("__o_")
                 ||ticTable[i][i].equals("_o_")
                 ||ticTable[i][i].equals("_o__")
             ) {
-                vicSum += 2;
+                oCount++;
             }
 
-            if (vicSum == 3){
+            if (xCount == 3){
                 System.out.println("X Wins!");
                 return true;
-            }else if(vicSum == 6){
+            }else if(oCount == 3){
                 System.out.println("O Wins!");
                 return true;
             }
 
         }
 
-        vicSum = 0; // zeros running count
+        xCount = 0; // zeros running count for X
+        oCount = 0; // zeros running count for O
         // checks the other diagonal for victory
         for (int i = 0; i < ticTable.length; i++) {
             if (ticTable[i][ticTable.length - i - 1] == "x"){
-                vicSum++;
+                xCount++;
             } else if (ticTable[i][ticTable.length - i - 1] == "o") {
-                vicSum += 2;
+                oCount++;
             }
-            if (vicSum == 3){
+            if (xCount == 3){
                 System.out.println("X Wins!");
                 return true;
-            }else if(vicSum == 6){
+            }else if(oCount == 3){
                 System.out.println("O Wins!");
                 return true;
             }
