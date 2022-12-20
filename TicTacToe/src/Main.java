@@ -113,7 +113,9 @@ public class Main {
                 case "9" -> game.tableUpdate(positions.getNine(), "x");
             }
 
-            game.checkVictory();
+            if(game.checkVictory()){
+                System.exit(0);
+            };
             game.printTable();
             System.out.println("Player two, please enter a position 1 - 9, for your marker O");
             String position2 = scanner.nextLine();
@@ -128,8 +130,11 @@ public class Main {
                 case "8" -> game.tableUpdate(positions.getEight(), "o");
                 case "9" -> game.tableUpdate(positions.getNine(), "o");
             }
-            game.checkVictory();
+
             game.printTable();
+            if(game.checkVictory()){
+                System.exit(0);
+            };
         }
 
     }
