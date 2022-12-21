@@ -220,8 +220,8 @@ public class TicTacToe {
                 || ticTable[coordinate.getRow()][coordinate.getColumn()] == "__o_"
                 || ticTable[coordinate.getRow()][coordinate.getColumn()] == "_x_"
                 || ticTable[coordinate.getRow()][coordinate.getColumn()] == "_x__"
-                || ticTable[coordinate.getRow()][coordinate.getColumn()] == "_0__"
-                || ticTable[coordinate.getRow()][coordinate.getColumn()] == "_0_"
+                || ticTable[coordinate.getRow()][coordinate.getColumn()] == "_o__"
+                || ticTable[coordinate.getRow()][coordinate.getColumn()] == "_o_"
         ) {
             System.out.println("That spot is already taken. Please Try Again!");
         }else if(coordinate.equals(positions.getOne())
@@ -246,7 +246,14 @@ public class TicTacToe {
     public void printTable() {
         for (int i = 0; i < ticTable.length; i++) {
             for (int j = 0; j < ticTable[i].length; j++) {
-                System.out.print(ticTable[i][j]);
+
+                if(j == 0 && i == 0 || i == 1 && j == 0 || i == 2 && j == 0){
+                    System.out.print(" |              " + ticTable[i][j]);
+                }else if(i == 0 && j == 2 || i == 1 && j ==2 || i == 2 && j == 2)   {
+                    System.out.print(ticTable[i][j] + "              |");
+                }else {
+                    System.out.print(ticTable[i][j]);
+                }
             }
             System.out.println();
         }
