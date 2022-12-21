@@ -10,7 +10,6 @@ public class Main {
         Users users = new Users();
         TicTacToe game = new TicTacToe(users);
 
-
         boolean startGame = false;
 
         //Greeting
@@ -96,8 +95,13 @@ public class Main {
             game.printTable();
         }
 
-
         while(!game.checkVictory()){
+
+            if(game.count == 9 && !game.checkVictory()){
+                System.out.println("DRAW!!");
+                System.exit(0);
+            }
+
             System.out.println("Player one, please enter a position 1 - 9, for your marker X");
             String position = scanner.nextLine();
 
@@ -116,7 +120,9 @@ public class Main {
             if(game.checkVictory()){
                 System.exit(0);
             };
+
             game.printTable();
+
             System.out.println("Player two, please enter a position 1 - 9, for your marker O");
             String position2 = scanner.nextLine();
             switch(position2){
@@ -131,12 +137,18 @@ public class Main {
                 case "9" -> game.tableUpdate(positions.getNine(), "o");
             }
 
+            game.printTable();
+
+
+
 
 
             if(game.checkVictory()){
                 game.printTable();
                 System.exit(0);
             };
+
+
         }
 
     }
