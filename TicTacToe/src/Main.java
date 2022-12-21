@@ -19,7 +19,8 @@ public class Main {
             System.out.println();
             game.printTable();
             System.out.println();
-            System.out.println("|||**If you would like to play, enter yes, else enter no**||");
+            System.out.println("    |||**If you would like to play**|||");
+            System.out.println("  |||** Enter Yes, to Exit enter No**|||");
             String response = scanner.nextLine();
 
             if(response.equalsIgnoreCase("yes")){
