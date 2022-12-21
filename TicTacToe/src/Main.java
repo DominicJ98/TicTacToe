@@ -131,8 +131,10 @@ public class Main {
                 case "9" -> game.tableUpdate(positions.getNine(), "o");
             }
 
-            game.printTable();
+
+
             if(game.checkVictory()){
+                game.printTable();
                 System.exit(0);
             };
         }
